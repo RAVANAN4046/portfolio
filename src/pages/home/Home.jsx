@@ -1,51 +1,40 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Particles from '../../../Reactbits/Particles/Particles'
+
 import './home.css' 
-import ClickSpark from "../../Reactbits1/ClickSpark/ClickSpark"
-import DecryptedText from "../../Reactbits/DecryptedText/DecryptedText";
+
+import Ballpits from "../../Reactbits/Ballpit/Ballpit"
 
 const Home = () => {
   const navigate = useNavigate()
 
   const about = () => {
-    navigate("/about/alan")
+    navigate("/about")
   }
 
   return (
     <div className="home-wrapper">
-      <div className="particles-bg">
-        <Particles
-          particleColors={['#ffffff', '#ffffff']}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-      </div>
+      <div style={{position: 'relative', overflow: 'hidden', minHeight: '500px', maxHeight: '500px', width: '100%',backgroundColor:'white'}}>
 
-      <ClickSpark
+<Ballpits
 
-  sparkColor='#fff'
+  count={100}
 
-  sparkSize={10}
+  gravity={0.7}
 
-  sparkRadius={15}
+  friction={0.8}
 
-  sparkCount={8}
+  wallBounce={0.95}
 
-  duration={400}
+  followCursor={true}
 
->
-{<div className="home-content">
-  <DecryptedText text="Welcome You" />
-      </div>}
-  
+  colors={["#ff0000","#0000ff","#3cb371","#ee82ee","#ffa500","#6a5acd"]}
 
-</ClickSpark>
+/>
+
+</div>
+
+      
 
       
     </div>
